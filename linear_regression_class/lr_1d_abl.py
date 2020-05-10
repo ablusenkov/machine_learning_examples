@@ -52,3 +52,11 @@ plt.scatter(X,Y)
 plt.plot(X, Y_pred)
 plt.show()
 
+
+
+# R_squared
+
+d1 = Y - Y_pred
+d2 = Y - Y.mean()
+R_s = 1 - d1.dot(d1) / d2.dot(d2)
+print("R-squared is: ", R_s)

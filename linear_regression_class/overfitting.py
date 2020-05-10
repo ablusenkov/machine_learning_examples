@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 
 
 def make_poly(X, deg):
+    # create polinom of desired degree 
     n = len(X)
     data = [np.ones(n)]
     for d in range(deg):
@@ -25,6 +26,8 @@ def fit(X, Y):
 
 
 def fit_and_display(X, Y, sample, deg):
+    # randomly take 10 data points from X out of present 100
+    # this to be used to train model, i.e. get W
     N = len(X)
     train_idx = np.random.choice(N, sample)
     Xtrain = X[train_idx]
@@ -99,3 +102,4 @@ if __name__ == "__main__":
     for deg in (5, 6, 7, 8, 9):
         fit_and_display(X, Y, 10, deg)
     plot_train_vs_test_curves(X, Y)
+
